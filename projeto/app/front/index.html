@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerenciador de Tarefas</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Gerenciador de Tarefas</h1>
+
+        <div id="estatisticas">
+            Total: 0 |
+            Pendentes: 0 |
+            Em andamento: 0 |
+            Concluídas: 0
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="filtros">
+
+            <select id="filtroStatus">
+
+                <option value="">
+                    Todos os status
+                </option>
+
+                <option value="pendente">
+                    Pendente
+                </option>
+
+                <option value="em andamento">
+                    Em andamento
+                </option>
+
+                <option value="concluída">
+                    Concluída
+                </option>
+
+                <option value="cancelada">
+                    Cancelada
+                </option>
+
+            </select>
+
+
+            <select id="filtroPrioridade">
+
+                <option value="">
+                    Todas as prioridades
+                </option>
+
+                <option value="baixa">
+                    Baixa
+                </option>
+
+                <option value="média">
+                    Média
+                </option>
+
+                <option value="alta">
+                    Alta
+                </option>
+
+                <option value="critica">
+                    Crítica
+                </option>
+
+            </select>
+
+
+            <!-- NOVO CAMPO -->
+
+            <input
+                type="text"
+                id="filtroResponsavel"
+                placeholder="Responsável"
+            >
+
+
+            <button onclick="carregarTarefas()">
+                Filtrar
+            </button>
+
+
+            <button
+                class="botao-nova"
+                onclick="abrirFormulario()"
+            >
+                + Nova tarefa
+            </button>
+
+        </section>
+
+
+        <section
+            id="formulario"
+            class="formulario escondido"
+        >
+
+            <h2>Nova tarefa</h2>
+
+            <input
+                type="text"
+                id="titulo"
+                placeholder="Título"
+            >
+
+            <input
+                type="text"
+                id="descricao"
+                placeholder="Descrição"
+            >
+
+            <input
+                type="text"
+                id="responsavel"
+                placeholder="Responsável"
+            >
+
+            <select id="prioridade">
+
+                <option value="baixa">
+                    Baixa
+                </option>
+
+                <option value="média">
+                    Média
+                </option>
+
+                <option value="alta">
+                    Alta
+                </option>
+
+                <option value="critica">
+                    Crítica
+                </option>
+
+            </select>
+
+
+            <input
+                type="text"
+                id="tags"
+                placeholder="Tags (separadas por vírgula)"
+            >
+
+
+            <div>
+
+                <button onclick="criarTarefa()">
+                    Criar
+                </button>
+
+                <button onclick="fecharFormulario()">
+                    Cancelar
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section id="listaTarefas">
+
+        </section>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

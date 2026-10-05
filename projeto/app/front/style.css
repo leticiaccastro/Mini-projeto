@@ -1,0 +1,291 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+
+/* ==============================
+   CABEÇALHO
+================================ */
+
+header {
+    height: 48px;
+    background: #d10b32;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 16px;
+}
+
+header h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+#estatisticas {
+    font-size: 12px;
+}
+
+
+/* ==============================
+   CONTEÚDO
+================================ */
+
+main {
+    width: 850px;
+    max-width: 95%;
+    margin: 18px auto;
+}
+
+
+/* ==============================
+   FILTROS
+================================ */
+
+.filtros {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 16px;
+}
+
+select,
+input {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 7px 10px;
+    background: white;
+}
+
+.filtros input {
+    width: 150px;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+
+    padding: 8px 14px;
+
+    background: #3263ad;
+    color: white;
+
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.botao-nova {
+    background: #d10b32;
+    margin-left: auto;
+}
+
+
+/* ==============================
+   CARDS
+================================ */
+
+#listaTarefas {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+
+.card {
+    background: white;
+
+    border-radius: 7px;
+
+    padding: 16px;
+
+    min-height: 130px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.08);
+
+    border-left: 4px solid #3263ad;
+}
+
+
+.card h3 {
+    font-size: 13px;
+
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+
+.informacoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 12px;
+
+    margin-bottom: 12px;
+}
+
+
+/* ==============================
+   STATUS
+================================ */
+
+.status {
+    padding: 4px 8px;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+
+    background: #e5e5e5;
+}
+
+.status.concluida {
+    background: #c8f3df;
+    color: #14704b;
+}
+
+.status.pendente {
+    background: #fff0bd;
+    color: #8a6200;
+}
+
+.status.em-andamento {
+    background: #dce9ff;
+    color: #2259a5;
+}
+
+.status.cancelada {
+    background: #ffd7dc;
+    color: #9b1c31;
+}
+
+
+/* ==============================
+   TAGS
+================================ */
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+
+.tag-badge {
+    background: #3b82f6;
+
+    color: white;
+
+    padding: 4px 8px;
+
+    border-radius: 10px;
+
+    font-size: 10px;
+}
+
+
+/* ==============================
+   BOTÕES DOS CARDS
+================================ */
+
+.acoes {
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 8px;
+}
+
+.btn-concluir {
+    flex: 1;
+
+    background: #3263ad;
+
+    font-size: 11px;
+}
+
+.btn-remover {
+    background: #ffe0e3;
+
+    color: #c51d38;
+
+    font-size: 11px;
+}
+
+
+/* ==============================
+   FORMULÁRIO
+================================ */
+
+.formulario {
+    background: white;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2 {
+    margin-top: 0;
+}
+
+.formulario input,
+.formulario select {
+    width: 100%;
+
+    margin-bottom: 10px;
+}
+
+.escondido {
+    display: none;
+}
+
+
+/* ==============================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 800px) {
+
+    #listaTarefas {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros {
+        flex-wrap: wrap;
+    }
+
+    .botao-nova {
+        margin-left: 0;
+    }
+
+}
